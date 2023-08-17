@@ -55,5 +55,35 @@ CREATE TABLE Product(
 )
 INSERT INTO Product(productName, Price)
 VALUES ('Bag', 10);
+
+INSERT INTO Product
+VALUES ('Bag', 10);
+--Multiple Row Added
+INSERT INTO Product(productName, Price)
+VALUES ('ring', 10),('watch',30),('skincareProduct',30);
 SELECT * FROM Product;
 Drop table Product;
+
+--DDL -data defination lang(used to create ,modify the object and structure)
+--create(new create),alter(update object ),drop(delete object),truncate(data delete but not structure),rename(rename the object)
+--Create(Database,Table,View,Triggers)
+--Alter (table modifing by adding .altering,dropping column and constraints)
+
+      --Adding New Column
+Alter Table Product ADD Quantity int default 1;
+         ALTER TABLE Product
+         ADD DateOfBirth date;
+
+      --Droping Column
+	ALTER TABLE Product
+DROP COLUMN Quantity ;
+
+--Rename Column
+--RENAME old_table _name To new_table_name ;    
+   --MODIFY DATATYPE
+  ALTER TABLE Product
+  ALTER COLUMN DateOfBirth DateTime; 
+
+  --Turncate (Delete all row )
+  TRUNCATE TABLE Product;
+
